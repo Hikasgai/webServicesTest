@@ -11,9 +11,9 @@ var uglify = require('gulp-uglify');
 
 var config = {
   script: {
-    source : 'src/scripts/main.js',
-    watch: 'src/scripts/**/*.js',
-    output : 'static/script'
+    source : 'src/js/main.js',
+    watch: 'src/js/**/*.js',
+    output : 'static/js'
   },
   style : {
     source : 'src/css/*.scss',

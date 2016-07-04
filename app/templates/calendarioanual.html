@@ -1,0 +1,123 @@
+{% extends "base.html" %} {% block content %}
+
+<form action="" class="container box calendarioanual">
+  <h5>Añadir dias sin clase: </h5>
+  <div class="row">
+    <div class="five columns">
+      <h6>Fecha:</h6>
+      <input type="date" class="u-full-width" id="fechasinclase" value="2016-09-05"/>
+    </div>
+
+    <div class="five columns">
+      <h6> Motivo de la fiesta: </h6>
+      <select class="u-full-width" id="motivosinclase">
+        <option value="FN">Fiesta Nacional</option>
+        <option value="FL">Fiesta Local</option>
+        <option value="FA">Fiesta Autonomica</option>
+        <option value="NP">No presencial</option>
+      </select>
+    </div>
+    <div class="two columns btnAdd">
+      <button type="button" class="u-full-width" id="sinclase"> Añadir </button>
+    </div>
+  </div>
+  <div class="row u-full-width">
+    <ul class="sinclase" id="listasinclase">
+    </ul>
+<hr/>
+
+<!-- Periodo de horario especial -->
+  </div>
+  <h5>Añadir peridos horario especial: </h5>
+  <div class="row">
+    <div class="three columns">
+      <h6>Fecha inicio:</h6>
+      <input type="date" class="u-full-width" id="fechaIniPHE" value="2016-09-05"/>
+    </div>
+    <div class="three columns">
+      <h6>Fecha fin:</h6>
+      <input type="date" class="u-full-width" id="fechaFinPHE" value="2017-09-05"/>
+    </div>
+    <div class="three columns">
+      <h6> Motivo del horario especial: </h6>
+      <select class="u-full-width" id="motivosPHE">
+        <option value="HA">Horario Agrupado</option>
+        <option value="FT">Fin De Trabajos</option>
+        <option value="EX">Examenes</option>
+      </select>
+    </div>
+    <div class="three columns btnAdd">
+      <button type="button" class="u-full-width" id="btnPHE"> Añadir </button>
+    </div>
+  </div>
+  <div class="row u-full-width">
+    <ul class="sinclase" id="listasPHE">
+
+    </ul>
+  </div>
+  <hr/>
+
+<!-- Periodo semanas excluidas -->
+</div>
+<h5>Añadir semanas excluidas: </h5>
+<div class="row">
+  <div class="five columns">
+    <h6>Primer dia de exclusion:</h6>
+    <input type="date" class="u-full-width" id="fechaSE" value="2016-09-05"/>
+  </div>
+
+  <div class="five columns">
+    <h6> Motivo de la exclusion: </h6>
+    <select class="u-full-width" id="motivosSE">
+      <option value="PA">Pascua</option>
+      <option value="PT">Puente</option>
+      <option value="NV">Navidad</option>
+    </select>
+  </div>
+  <div class="two columns btnAdd">
+    <button type="button" class="u-full-width" id="btnSE"> Añadir </button>
+  </div>
+</div>
+<div class="row u-full-width">
+  <ul class="sinclase" id="listasSE">
+
+  </ul>
+</div>
+<hr/>
+
+<!-- Gestion intercambio de dias -->
+</div>
+<h5>Añadir intercambio de dias: </h5>
+<div class="row">
+  <div class="five columns">
+    <h6>Fecha original:</h6>
+    <input type="date" class="u-full-width" id="fechaIntDias" value="2016-09-05"/>
+  </div>
+
+  <div class="five columns">
+    <h6> Día por el que se cambia: </h6>
+    <select class="u-full-width" id="motivosIntDias">
+      <option value="MON">Lunes</option>
+      <option value="TUE">Martes</option>
+      <option value="WED">Miercoles</option>
+      <option value="THU">Jueves</option>
+      <option value="FRI">Viernes</option>
+    </select>
+  </div>
+  <div class="two columns btnAdd">
+    <button type="button" class="u-full-width" id="btnIntDias"> Añadir </button>
+  </div>
+</div>
+<div class="row u-full-width">
+  <ul class="sinclase" id="listasIntDias">
+
+  </ul>
+</div>
+
+<button type="button" class="u-full-width" id="submitCalendar">Crear calendario</button>
+</form>
+
+<a download="calendario.ics" id="downloadlink" style="display: none">Download</a>
+<span class="loading style-3 hidden"></span>
+
+{% endblock %}
