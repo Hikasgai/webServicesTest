@@ -1,0 +1,12 @@
+beautifulsoup4==4.4.1
+bs4==0.0.1
+defusedxml==0.4.1
+Django==1.9.7
+docutils==0.12
+icalendar==3.10
+python-dateutil==2.5.3
+pytz==2016.4
+requests==2.10.0
+six==1.10.0
+SOAPpy==0.12.22
+wstools==0.4.3

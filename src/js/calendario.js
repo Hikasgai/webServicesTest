@@ -43,7 +43,7 @@ var addPHE = function() {
     var fechaFinal = $(fechaFin).val();
     var value = fechaInicial + "&" + fechaFinal + "&" + motivo;
     var motivoTxt = $("#motivosPHE option:selected").text();
-    $(lista).append("<li> Inicio: " + fechaInicial + " Fin: " + fechaFinal + " " + motivoTxt + "</li><input type='hidden' name='e[]' value=" + value + " class='inputSE'/>");
+    $(lista).append("<li> Inicio: " + fechaInicial + " Fin: " + fechaFinal + " " + motivoTxt + "</li><input type='hidden' name='phe[]' value=" + value + " class='inputPHE'/>");
   });
 }
 
@@ -65,9 +65,9 @@ var addIntDias = function() {
 var normalizeDate = function(mydate) {
   var newDate = new Date(mydate);
   var posDay = newDate.getDay();
-  console.log(newDate);
-  console.log(posDay);
-  mydate.replace("-", "/");
+
+  mydate = mydate.split('-').join('/');
+
   var day = "MON";
   switch (posDay) {
     case 1:
@@ -266,7 +266,7 @@ var generarCalendario = function() {
     var aSE = [];
     var se = $(".inputSE");
     $(se).each(function() {
-      aPHE.push(normalizeSE($(this).val()));
+      aSE.push(normalizeSE($(this).val()));
     });
     calendario["semanasExcluidas"] = aSE;
 
@@ -274,7 +274,7 @@ var generarCalendario = function() {
     var aIDias = [];
     var se = $(".inputIntDias");
     $(se).each(function() {
-      aPHE.push(normalizeIntDias($(this).val()));
+      aIDias.push(normalizeIntDias($(this).val()));
     });
     calendario["intercambioDias"] = aIDias;
 
