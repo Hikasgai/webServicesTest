@@ -77,46 +77,46 @@
     bottom: 160px; } }
 
 .bubble:nth-child(1) {
-  left: 46px;
-  -webkit-animation-delay: 27.02041ms;
+  left: 92px;
+  -webkit-animation-delay: 2.90211ms;
   -webkit-animation-duration: 600ms;
-  -webkit-transform: scale(0.8); }
+  -webkit-transform: scale(0.4); }
 
 .bubble:nth-child(2) {
-  left: 65px;
-  -webkit-animation-delay: 8.19398ms;
-  -webkit-animation-duration: 1300ms;
+  left: 85px;
+  -webkit-animation-delay: 24.73042ms;
+  -webkit-animation-duration: 1000ms;
   -webkit-transform: scale(0.8); }
 
 .bubble:nth-child(3) {
-  left: 71px;
-  -webkit-animation-delay: 23.35789ms;
-  -webkit-animation-duration: 1200ms;
-  -webkit-transform: scale(1.2); }
+  left: 18px;
+  -webkit-animation-delay: 29.53266ms;
+  -webkit-animation-duration: 800ms;
+  -webkit-transform: scale(0.4); }
 
 .bubble:nth-child(4) {
-  left: 82px;
-  -webkit-animation-delay: 23.79209ms;
-  -webkit-animation-duration: 1300ms;
-  -webkit-transform: scale(0.9); }
+  left: 166px;
+  -webkit-animation-delay: 11.50002ms;
+  -webkit-animation-duration: 500ms;
+  -webkit-transform: scale(0.4); }
 
 .bubble:nth-child(5) {
-  left: 143px;
-  -webkit-animation-delay: 22.51769ms;
-  -webkit-animation-duration: 700ms;
+  left: 71px;
+  -webkit-animation-delay: 28.70138ms;
+  -webkit-animation-duration: 400ms;
   -webkit-transform: scale(0.5); }
 
 .bubble:nth-child(6) {
-  left: 140px;
-  -webkit-animation-delay: 1.1967ms;
+  left: 43px;
+  -webkit-animation-delay: 27.53974ms;
   -webkit-animation-duration: 500ms;
   -webkit-transform: scale(0.4); }
 
 .bubble:nth-child(7) {
-  left: 175px;
-  -webkit-animation-delay: 18.26983ms;
-  -webkit-animation-duration: 800ms;
-  -webkit-transform: scale(0.7); }
+  left: 81px;
+  -webkit-animation-delay: 17.32121ms;
+  -webkit-animation-duration: 1200ms;
+  -webkit-transform: scale(0.9); }
 
 .beer-foam {
   position: absolute;

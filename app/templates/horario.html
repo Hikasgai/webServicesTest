@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="container box">
+
+  <input type="text" id="input-asignatura" placeholder="Escoge una asignatura"/>
+  <ul class="misasignaturas" id="misasignaturas">
+
+  </ul>
+  <button type="button" id="btnAsignaturas">Generar horario</button>
+</form>
+
+<a download="calendario.ics" id="downloadlink" style="display: none">Download</a>
+<span class="loading style-3 hidden"></span>
+{% endblock %}
