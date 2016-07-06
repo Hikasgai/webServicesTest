@@ -77,46 +77,46 @@
     bottom: 160px; } }
 
 .bubble:nth-child(1) {
-  left: 92px;
-  -webkit-animation-delay: 2.90211ms;
-  -webkit-animation-duration: 600ms;
-  -webkit-transform: scale(0.4); }
-
-.bubble:nth-child(2) {
-  left: 85px;
-  -webkit-animation-delay: 24.73042ms;
-  -webkit-animation-duration: 1000ms;
-  -webkit-transform: scale(0.8); }
-
-.bubble:nth-child(3) {
-  left: 18px;
-  -webkit-animation-delay: 29.53266ms;
-  -webkit-animation-duration: 800ms;
-  -webkit-transform: scale(0.4); }
-
-.bubble:nth-child(4) {
-  left: 166px;
-  -webkit-animation-delay: 11.50002ms;
-  -webkit-animation-duration: 500ms;
-  -webkit-transform: scale(0.4); }
-
-.bubble:nth-child(5) {
-  left: 71px;
-  -webkit-animation-delay: 28.70138ms;
-  -webkit-animation-duration: 400ms;
+  left: 30px;
+  -webkit-animation-delay: 24.08887ms;
+  -webkit-animation-duration: 1100ms;
   -webkit-transform: scale(0.5); }
 
+.bubble:nth-child(2) {
+  left: 40px;
+  -webkit-animation-delay: 28.14907ms;
+  -webkit-animation-duration: 1200ms;
+  -webkit-transform: scale(0.7); }
+
+.bubble:nth-child(3) {
+  left: 158px;
+  -webkit-animation-delay: 6.22006ms;
+  -webkit-animation-duration: 1000ms;
+  -webkit-transform: scale(1.3); }
+
+.bubble:nth-child(4) {
+  left: 124px;
+  -webkit-animation-delay: 17.92054ms;
+  -webkit-animation-duration: 600ms;
+  -webkit-transform: scale(1.2); }
+
+.bubble:nth-child(5) {
+  left: 158px;
+  -webkit-animation-delay: 23.217ms;
+  -webkit-animation-duration: 1100ms;
+  -webkit-transform: scale(0.9); }
+
 .bubble:nth-child(6) {
-  left: 43px;
-  -webkit-animation-delay: 27.53974ms;
-  -webkit-animation-duration: 500ms;
-  -webkit-transform: scale(0.4); }
+  left: 62px;
+  -webkit-animation-delay: 17.24949ms;
+  -webkit-animation-duration: 600ms;
+  -webkit-transform: scale(0.5); }
 
 .bubble:nth-child(7) {
-  left: 81px;
-  -webkit-animation-delay: 17.32121ms;
+  left: 39px;
+  -webkit-animation-delay: 22.11196ms;
   -webkit-animation-duration: 1200ms;
-  -webkit-transform: scale(0.9); }
+  -webkit-transform: scale(0.4); }
 
 .beer-foam {
   position: absolute;

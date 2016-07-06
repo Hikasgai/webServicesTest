@@ -25632,20 +25632,37 @@ var loadAsignaturas = function() {
     contentType: "application/json; charset=utf-8",
     dataType: "json",
     success: function(data) {
-      console.log("Asignaturas cargadas");
-      console.log(data)
-      $("#input-asignatura").autocomplete({
-        source: data["asignaturas"],
-        select: function(event, ui) {
-          // Set autocomplete element to display the label
-          this.value = ui.item.label;
-
-          $("#misasignaturas").append("<li>" + ui.item.label + "</li><input type='hidden' class='addasig' value='" + ui.item.value + "'/>");
-          $("#input-asignatura").val("");
-          // Prevent default behaviour
-          return false;
-        }
-      });
+      //TODO: Esta funcion es muy guarra, mañana la pongo bien pero para probar ahora vale
+      var ulPrimero = "<ul class='primero'>";
+      for(var i in data["1"]){
+        ulPrimero += "<li><input type='checkbox' name='primero' value='"+ data["1"][i]['codigo'] +"' />" + data["1"][i]['nombreAsignatura'] + "</li>";
+      }
+      ulPrimero += "</ul>";
+      var ulSegundo = "<ul class='segundo'>";
+      for(var i in data["2"]){
+        ulSegundo += "<li><input type='checkbox' name='segundo' value='"+ data["2"][i]['codigo'] +"' />" + data["2"][i]['nombreAsignatura'] + "</li>";
+      }
+      ulSegundo += "</ul>";
+      var ulTercero = "<ul class='tercero'>";
+      for(var i in data["3"]){
+        ulTercero += "<li><input type='checkbox' name='tercero' value='"+ data["3"][i]['codigo'] +"' />" + data["3"][i]['nombreAsignatura'] + "</li>";
+      }
+      ulTercero += "</ul>";
+      var ulCuarto = "<ul class='cuarto'>";
+      for(var i in data["4"]){
+        ulCuarto += "<li><input type='checkbox' name='cuarto' value='"+ data["4"][i]['codigo'] +"' />" + data["4"][i]['nombreAsignatura'] + "</li>";
+      }
+      ulCuarto += "</ul>";
+      var ulOptativas = "<ul class='optativas'>";
+      for(var i in data["X"]){
+        ulOptativas += "<li><input type='checkbox' name='optativas' value='"+ data["X"][i]['codigo'] +"' />" + data["X"][i]['nombreAsignatura'] + "</li>";
+      }
+      ulOptativas += "</ul>";
+      $("#asignaturasprimero").append(ulPrimero);
+      $("#asignaturassegundo").append(ulSegundo);
+      $("#asignaturastercero").append(ulTercero);
+      $("#asignaturascuarto").append(ulCuarto);
+      $("#asignaturasoptativas").append(ulOptativas);
     },
     error: function() {
       console.log("Error al cargar las asignatuas");
@@ -25673,16 +25690,29 @@ var generarHorario = function() {
   var loadingDiv = $(".loading")[0];
   $("#btnAsignaturas").on("click", function() {
     $(loadingDiv).removeClass("hidden");
-    var codigos = $(".addasig");
-    items = []
-    $(codigos).each(function() {
-      obj = {}
-      obj["codigoAsig"] = $(this).val();
-      items.push(obj);
+    data = {};
+    data["1"] = [];
+    data["2"] = [];
+    data["3"] = [];
+    data["4"] = [];
+    data["X"] = [];
+
+    $("input:checkbox[name=primero]:checked").each(function(){
+    data["1"].push($(this).val());
     });
-    postdata = {}
-    postdata["data"] = items;
-    var jsonPretty = JSON.stringify(postdata);
+    $("input:checkbox[name=segundo]:checked").each(function(){
+    data["2"].push($(this).val());
+    });
+    $("input:checkbox[name=tercero]:checked").each(function(){
+    data["3"].push($(this).val());
+    });
+    $("input:checkbox[name=cuarto]:checked").each(function(){
+    data["4"].push($(this).val());
+    });
+    $("input:checkbox[name=optativas]:checked").each(function(){
+    data["X"].push($(this).val());
+    });
+    var jsonPretty = JSON.stringify(data);
     url = "/obtenergrupos";
     var link = document.getElementById('downloadlink');
     console.log(jsonPretty);
@@ -25701,6 +25731,7 @@ var generarHorario = function() {
 
       }
     });
+
   });
 
 };
@@ -26033,5 +26064,5 @@ cal.addIntDias();
 
 asig.escogerAsignatura();
 
-}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_9fa6c67e.js","/")
+}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_79f36752.js","/")
 },{"./asignaturas.js":7,"./calendario.js":8,"buffer":1,"jquery":6,"oMfpAn":4}]},{},[9])

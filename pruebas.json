@@ -1,106 +1,94 @@
-[{
-  "eventos": [{
-    "tipoEvento": "GA",
-    "rangoSemanas": "16-30",
-    "horaFin": "12:15",
-    "diaSemana": "THU",
-    "horaInicio": "10:45"
-  }, {
-    "tipoEvento": "M",
-    "rangoSemanas": "16-30",
-    "horaFin": "10:45",
-    "diaSemana": "WED",
-    "horaInicio": "09:00"
-  }, {
-    "tipoEvento": "M",
-    "rangoSemanas": "16-30",
-    "horaFin": "14:00",
-    "diaSemana": "FRI",
-    "horaInicio": "12:30"
-  }],
-  "nombreAsignatura": "\u00a0Estructura de Computadores"
-}, {
-  "eventos": [{
-    "tipoEvento": "GA",
-    "rangoSemanas": "16-30",
-    "horaFin": "14:00",
-    "diaSemana": "THU",
-    "horaInicio": "12:30"
-  }, {
-    "tipoEvento": "M",
-    "rangoSemanas": "16-30",
-    "horaFin": "10:30",
-    "diaSemana": "TUE",
-    "horaInicio": "09:00"
-  }, {
-    "tipoEvento": "M",
-    "rangoSemanas": "16-30",
-    "horaFin": "12:15",
-    "diaSemana": "WED",
-    "horaInicio": "10:45"
-  }],
-  "nombreAsignatura": "\u00a0Metodolog\u00eda de la Programaci\u00f3n"
-}, {
-  "eventos": [{
-    "tipoEvento": "GA",
-    "rangoSemanas": "1-15",
-    "horaFin": "10:30",
-    "diaSemana": "THU",
-    "horaInicio": "08:30"
-  }, {
-    "tipoEvento": "M",
-    "rangoSemanas": "1-15",
-    "horaFin": "14:00",
-    "diaSemana": "MON",
-    "horaInicio": "12:30"
-  }, {
-    "tipoEvento": "M",
-    "rangoSemanas": "1-15",
-    "horaFin": "12:15",
-    "diaSemana": "FRI",
-    "horaInicio": "10:45"
-  }],
-  "nombreAsignatura": "\u00a0Programaci\u00f3n B\u00e1sica"
-}, {
-  "eventos": [{
-    "tipoEvento": "GA",
-    "rangoSemanas": "16-30",
-    "horaFin": "14:00",
-    "diaSemana": "TUE",
-    "horaInicio": "12:30"
-  }, {
-    "tipoEvento": "M",
-    "rangoSemanas": "16-30",
-    "horaFin": "12:15",
-    "diaSemana": "MON",
-    "horaInicio": "10:45"
-  }, {
-    "tipoEvento": "M",
-    "rangoSemanas": "16-30",
-    "horaFin": "10:30",
-    "diaSemana": "FRI",
-    "horaInicio": "09:00"
-  }],
-  "nombreAsignatura": "\u00a0\u00c1lgebra"
-}, {
-  "eventos": [{
-    "tipoEvento": "GA",
-    "rangoSemanas": "1-15",
-    "horaFin": "14:00",
-    "diaSemana": "TUE",
-    "horaInicio": "12:30"
-  }, {
-    "tipoEvento": "M",
-    "rangoSemanas": "1-15",
-    "horaFin": "12:15",
-    "diaSemana": "MON",
-    "horaInicio": "10:45"
-  }, {
-    "tipoEvento": "M",
-    "rangoSemanas": "1-15",
-    "horaFin": "10:30",
-    "diaSemana": "FRI",
-    "horaInicio": "09:00"
-  }],
-  "nombreAsignatura": "\u00a0An\u00e1lisis Matem\u00e1tico"
-}]
+"$schema": "http://json-schema.org/",
+"type": "object",
+"properties": {
+  "infoHorariosAsignatura": {
+    "type": "object",
+    "properties": {
+      "nombreAsignatura": {
+        "type": "string"
+      },
+      "codigo": {
+        "type": "string",
+        "pattern": "[0-9]{5}"
+      },
+      "enlaceWebUPV": {
+        "type": "string",
+        "pattern": "http://www.ehu.eus"
+      },
+      "horarioGrupoAsignatura": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "horarioGrupoAsignatura": {
+              "type": "object",
+              "properties": {
+                "IDGrupo": {
+                  "type": "string",
+                  "pattern": "[0-9]{2}"
+                },
+                "horarioEspecial": {
+                  "type": "string",
+                  "pattern": "(MON|TUE|WED|THU|FRI|SAT|SUN)"
+                },
+                "eventos": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "tipoEvento": {
+                        "type": "string",
+                        "pattern": "(M|S|GA|GL|GO|GCL|TA|TI|GCA)"
+                      },
+                      "diaSemana": {
+                        "type": "string",
+                        "pattern": "(MON|TUE|WED|THU|FRI|SAT|SUN)"
+                      },
+                      "rangoSemanas": {
+                        "type": "string",
+                        "pattern": "[0-9]{1,2}-[0-9]{1,2}"
+                      },
+                      "horaInicio": {
+                        "type": "string",
+                        "pattern": "[0-9][0-9]:[0-9][0-9]"
+                      },
+                      "horaFin": {
+                        "type": "string",
+                        "pattern": "[0-9][0-9]:[0-9][0-9]"
+                      }
+                    },
+                    "required": [
+                      "tipoEvento",
+                      "diaSemana",
+                      "rangoSemanas",
+                      "horaInicio",
+                      "horaFin"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "IDGrupo",
+                "horarioEspecial",
+                "eventos"
+              ]
+            }
+          },
+          "required": [
+            "horarioGrupoAsignatura"
+          ]
+        }
+      }
+    },
+    "required": [
+      "nombreAsignatura",
+      "codigo",
+      "enlaceWebUPV",
+      "horarioGrupoAsignatura"
+    ]
+  }
+},
+"required": [
+  "infoHorariosAsignatura"
+]
+}

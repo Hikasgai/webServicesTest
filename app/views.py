@@ -42,43 +42,54 @@ def horarioAsignaturas(request):
 @csrf_exempt
 def getAsignaturas(request):
 
-    server = SOAPProxy('www.abj-ws-devborja.c9users.io:8080')
+    server = SOAPProxy('www.abj-ws-devborja.c9users.io:8081')
     res = json.loads(server.obtenerAsignaturasGradoInformatica())
-    data = []
+    data = {}
+    data["1"] = []
+    data["2"] = []
+    data["3"] = []
+    data["4"] = []
+    data["X"] = []
     for asig in res["asignaturas"]:
         obj = {}
-        obj["label"] = asig["nombreAsignatura"]
-        obj["value"] = asig["codigo"]
-        data.append(obj)
-    lista = {}
-    lista["asignaturas"] = data
-    return HttpResponse(json.dumps(lista))
+        obj["nombreAsignatura"] = asig["nombreAsignatura"]
+        obj["codigo"] = asig["codigo"]
+        if asig["curso"] == "1":
+            data["1"].append(obj)
+        elif asig["curso"] == "2":
+            data["2"].append(obj)
+        elif asig["curso"] == "3":
+            data["3"].append(obj)
+        elif asig["curso"] == "4":
+            data["4"].append(obj)
+        else:
+            data["X"].append(obj)
+    return HttpResponse(json.dumps(data))
 
 @csrf_exempt
 def obtenerGrupos(request):
     if request.method == "POST":
-        server = SOAPProxy('www.abj-ws-devborja.c9users.io:8080')
+        server = SOAPProxy('www.abj-ws-devborja.c9users.io:8081')
         server2 = SOAPProxy('www.abj-ws-devborja.c9users.io:8082')
         body_unicode = request.body.decode('utf-8')
         received_json_data = json.loads(body_unicode)
         data = []
-        for item in received_json_data["data"]:
-            obj = {}
-            res = server.obtenerGruposAsignaturaInformatica(item["codigoAsig"])
-            res = json.loads(server.obtenerHorarioAsignatura(item["codigoAsig"], res["grupos"][0]))
-            obj["nombreAsignatura"] = res["nombreAsignatura"]
-            obj["eventos"] = res["horarioGrupoAsignatura"][0]["eventos"]
-            data.append(obj)
-        print(json.dumps(data))
+        for key, value in received_json_data.iteritems():
+            for item in value:
+                obj = {}
+                res = server.obtenerGruposAsignaturaInformatica(item, key)
+                res = json.loads(server.obtenerHorarioAsignatura(item, res["grupos"][0]))
+                obj["nombreAsignatura"] = res["nombreAsignatura"]
+                obj["eventos"] = res["horarioGrupoAsignatura"][0]["eventos"]
+                data.append(obj)
         horario = server2.crearHorario(json.dumps(data))
         calendario = {}
         calendario["calendario"] = horario
-        print(horario)
         return HttpResponse(json.dumps(calendario))
 
 @csrf_exempt
 def obtenerTodasLasAsignaturas(request):
-    server = SOAPProxy('www.abj-ws-devborja.c9users.io:8080')
+    server = SOAPProxy('www.abj-ws-devborja.c9users.io:8081')
     res = json.loads(server.obtenerAsignaturasGradoInformatica())
     return HttpResponse(json.dumps(res, sort_keys=True, indent=4))
 
