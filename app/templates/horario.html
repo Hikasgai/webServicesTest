@@ -1,30 +1,72 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
+{% load staticfiles %}
+<div class="loading-ehu hidden" id="loading-ehu">
+  <img src="{% static 'images/ehub.png' %}" alt="" height="100px" width="100px">
+  <h3>La página se esta cargando, espera unos segundos</h3>
+</div>
+<main class="container">
+  <div class="tabs-container box">
+    <input id="tab-1" type="radio" name="tabs" checked="checked" />
+    <input id="tab-2" type="radio" name="tabs" />
+    <input id="tab-3" type="radio" name="tabs" />
+    <input id="tab-4" type="radio" name="tabs" />
+    <input id="tab-5" type="radio" name="tabs" />
 
-<form action="container box">
+    <div class="tabs">
+      <label for="tab-1">Primero</label>
+      <label for="tab-2">Segundo</label>
+      <label for="tab-3">Tercero</label>
+      <label for="tab-4">Optativas</label>
+      <label for="tab-5">Cuarto</label>
+    </div>
+    <div class="content">
+      <div class="tab">
+        <div id="asignaturasprimero">
 
-  <div id="asignaturasprimero">
-    <h3>Asignaturas primero</h3>
+        </div>
+      </div>
+      <div class="tab">
+        <div id="asignaturassegundo">
+
+
+        </div>
+
+      </div>
+      <div class="tab">
+        <div id="asignaturastercero">
+
+
+        </div>
+
+      </div>
+      <div class="tab">
+        <div id="asignaturasoptativas">
+
+
+        </div>
+      </div>
+      <div class="tab">
+        <div id="asignaturascuarto">
+
+
+        </div>
+      </div>
+
+    </div>
   </div>
-  <div id="asignaturassegundo">
-    <h3>Asignaturas segundo</h3>
+  </div><button type="button" id="btnAsignaturas" class="btn-large">Generar horario</button>
+</main>
 
-  </div>
-  <div id="asignaturastercero">
-    <h3>Asignaturas tercero</h3>
+<div class="download-wrap" style="display: none"  id="downloaddiv">
+<div class="download">
+  <a href="#" download="calendario.ics" id="downloadlink" class="button-download">
+    Descargar horario
+    <span class="icon-wrap">
+      <i class="icon-download"></i>
+    </span>
+  </a>
 
-  </div>
-  <div id="asignaturasoptativas">
-    <h3>Asignaturas optativas</h3>
-
-  </div>
-  <div id="asignaturascuarto">
-    <h3>Asignaturas cuarto</h3>
-
-  </div>
-  <button type="button" id="btnAsignaturas">Generar horario</button>
-</form>
-
-<a download="calendario.ics" id="downloadlink" style="display: none">Download</a>
-<span class="loading style-3 hidden"></span>
-{% endblock %}
+</div>
+</div>
+<a download="calendario.ics" id="downloadlink" style="display: none"></a>
+<span class="loading style-3 hidden"></span> {% endblock %}

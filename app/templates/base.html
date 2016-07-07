@@ -11,7 +11,19 @@
 </head>
 
 <body>
+  <header class="header u-full-width">
+    <div class="header-container container">
+      <img src="{% static 'images/cal.png' %}" alt="" class="header-logo" height="50px" width="50px">
+      <h1 class="header-title"> Hikasgai <sub>ß</sub></h1>
+    </div>
+  </header>
   {% block content %}{% endblock %}
+  <footer class="footer u-full-width">
+    <div class="footer-main">
+      <img src="{% static 'images/ehuw.png' %}" alt="" height="50px" width="50px">
+    </div>
+    <div class="footer-sub"></div>
+  </footer>
   <script type="text/javascript" src="{% static 'js/bundle.js' %}"></script>
 </body>
 

@@ -82,7 +82,9 @@ def obtenerGrupos(request):
                 obj["nombreAsignatura"] = res["nombreAsignatura"]
                 obj["eventos"] = res["horarioGrupoAsignatura"][0]["eventos"]
                 data.append(obj)
-        horario = server2.crearHorario(json.dumps(data))
+        with open('anual.json') as data_file:
+            dataCal = json.load(data_file)
+        horario = server2.crearCalendarioCompleto(json.dumps(data), json.dumps(dataCal))
         calendario = {}
         calendario["calendario"] = horario
         return HttpResponse(json.dumps(calendario))

@@ -5,13 +5,21 @@
 @import "skeleton";
 @import "calendario";
 @import "loading";
+@import "base";
+@import "download";
+@import "tabs";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
+*{
+  font-family: 'Open Sans';
+}
 body {
-  background-color: #5D504C;
+  background-color: $cWhite;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  justify-content: space-between;
+  min-height: 100vh;
 
 }
 .ws-title{
@@ -47,4 +55,33 @@ h6{
 
 input{
   padding: 5px;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+.index-img{
+  margin-top: 3em;
+}
+
+.ira{
+  padding: 10px 1em;
+  background-color: #27b2e3;
+  border: 1px solid darken(#27b2e3, 10%);
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+  cursor:pointer;
+  transition: 0.3s linear all;
+
+  &:hover{
+    color: darken(white, 20%);
+    background-color: darken(#27b2e3, 10%);
+  }
+}
+
+.enlaces{
+  display: flex;
+  margin-top: 10px;
 }

@@ -1,0 +1,94 @@
+$tabs: 5;
+$color: #242B36;
+$brand: #D22C3F;
+
+*, :before, :after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(#000,0);
+}
+
+
+input[name="tabs"] {
+  display: none;
+  @for $i from 1 through $tabs {
+    &#tab-#{$i}:checked {
+      ~ .content .tab:nth-of-type(#{$i}) {
+        display: inline-block;
+      }
+      ~ .tabs label:nth-child(#{$i}) {
+        color: #242b36;
+        &:after {
+          width: calc(100% - 30px);
+          transition: .3s;
+        }
+      }
+    }
+  }
+}
+
+.tabs-container {
+  background-color: $cWhite;
+  box-shadow: 0 20px 50px -25px rgba(0, 0, 0, .3);
+  overflow-X: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  white-space: nowrap;
+  label {
+    display: inline-block;
+    padding: 18px;
+    position: relative;
+    color: lighten($color, 60%);
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    &:after {
+      content: '';
+      background: $brand;
+      width: 0;
+      height: 4px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: .1s;
+    }
+  }
+}
+
+.tabs-container {
+
+  width: 90%;
+  box-shadow: 0 50px 75px -25px rgba(0, 0, 0, .05);
+  margin: 25px auto;
+  overflow: hidden;
+  .tab {
+    display: none;
+    //background: #F6F6F6;
+    padding: 0 20px;
+  }
+  .tabs{
+    border-bottom: 1px solid #F6F6F6;
+  }
+}
+
+.content .tab{
+  width: 100%;
+  padding: 10px;
+}
+
+.btn-large{
+  width: 80%;
+  border-radius: 0;
+  background-color: $cMain;
+  border-color: darken($cMain, 10%);
+  color: black;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.15s linear all;
+  &:hover{
+    background-color: #32c97c;
+    border-color: rgba(0, 0, 0, 0);
+  }
+}

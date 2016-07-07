@@ -25622,9 +25622,12 @@ return jQuery;
 var $ = require("jquery");
 require("jquery-ui");
 
+
+
 var loadAsignaturas = function() {
   url = "/getAsignaturas";
-
+  var loadingDiv = $("#loading-ehu");
+  $(loadingDiv).removeClass("hidden");
   $.ajax({
     type: "POST",
     url: url,
@@ -25632,6 +25635,7 @@ var loadAsignaturas = function() {
     contentType: "application/json; charset=utf-8",
     dataType: "json",
     success: function(data) {
+      $(loadingDiv).addClass("hidden", 500);
       //TODO: Esta funcion es muy guarra, mañana la pongo bien pero para probar ahora vale
       var ulPrimero = "<ul class='primero'>";
       for(var i in data["1"]){
@@ -25687,7 +25691,7 @@ var textFile = null,
   };
 
 var generarHorario = function() {
-  var loadingDiv = $(".loading")[0];
+  var loadingDiv = $("#loading-ehu");
   $("#btnAsignaturas").on("click", function() {
     $(loadingDiv).removeClass("hidden");
     var data = {};
@@ -25714,7 +25718,9 @@ var generarHorario = function() {
     });
     var jsonPretty = JSON.stringify(data);
     url = "/obtenergrupos";
-    var link = document.getElementById('downloadlink');
+    var link = document.getElementById('downloadlink'),
+    downloadDiv = document.getElementById('downloaddiv');
+
     console.log(jsonPretty);
     $.ajax({
       type: "POST",
@@ -25726,7 +25732,7 @@ var generarHorario = function() {
         console.log("Calendario generado");
         console.log(data);
         link.href = makeTextFile(data["calendario"]);
-        link.style.display = 'block';
+        downloadDiv.style.display = 'block';
         $(loadingDiv).addClass("hidden", 500);
 
       }
@@ -26064,5 +26070,5 @@ cal.addIntDias();
 
 asig.escogerAsignatura();
 
-}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_31ac3678.js","/")
+}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_614d1a20.js","/")
 },{"./asignaturas.js":7,"./calendario.js":8,"buffer":1,"jquery":6,"oMfpAn":4}]},{},[9])

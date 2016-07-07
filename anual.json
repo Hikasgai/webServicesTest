@@ -1,0 +1,87 @@
+{
+  "diasSinClase": [{
+    "motivo": "FiestaLocal",
+    "fecha": "2016/09/09 FRI"
+  }, {
+    "motivo": "FiestaNacional",
+    "fecha": "2016/10/12 WED"
+  }, {
+    "motivo": "NoPresencial",
+    "fecha": "2016/10/31 MON"
+  }, {
+    "motivo": "FiestaNacional",
+    "fecha": "2016/11/01 TUE"
+  }, {
+    "motivo": "NoPresencial",
+    "fecha": "2017/03/09 THU"
+  }, {
+    "motivo": "FiestaNacional",
+    "fecha": "2017/05/01 MON"
+  }],
+  "periodosHorarioEspecial": [{
+    "fechaInicio": "2016/10/04 TUE",
+    "fechaFin": "2016/10/11 MON",
+    "motivo": "HorarioAgrupado"
+  }, {
+    "fechaInicio": "2016/11/14 MON",
+    "fechaFin": "2016/11/18 SUN",
+    "motivo": "HorarioAgrupado"
+  }, {
+    "fechaInicio": "2016/12/19 MON",
+    "fechaFin": "2016/12/23 THU",
+    "motivo": "FinDeTrabajos"
+  }, {
+    "fechaInicio": "2017/01/09 MON",
+    "fechaFin": "2017/01/24 WED",
+    "motivo": "Examenes"
+  }, {
+    "fechaInicio": "2017/02/22 WED",
+    "fechaFin": "2017/02/28 WED",
+    "motivo": "HorarioAgrupado"
+  }, {
+    "fechaInicio": "2017/04/03 MON",
+    "fechaFin": "2017/04/07 FRI",
+    "motivo": "HorarioAgrupado"
+  }, {
+    "fechaInicio": "2017/05/15 MON",
+    "fechaFin": "2017/05/19 FRI",
+    "motivo": "FinDeTrabajos"
+  }, {
+    "fechaInicio": "2017/05/24 WED",
+    "fechaFin": "2017/06/06 TUE",
+    "motivo": "Examenes"
+  }, {
+    "fechaInicio": "2017/06/19 MON",
+    "fechaFin": "2017/06/30 FRI",
+    "motivo": "Examenes"
+  }],
+  "semanasExcluidas": [{
+    "motivo": "Puente",
+    "primerDiaSemana": "2016/12/05 MON"
+  }, {
+    "motivo": "Navidad",
+    "primerDiaSemana": "2016/12/26 MON"
+  }, {
+    "motivo": "Navidad",
+    "primerDiaSemana": "2017/01/02 MON"
+  }, {
+    "motivo": "Pascua",
+    "primerDiaSemana": "2017/04/10 MON"
+  }, {
+    "motivo": "Pascua",
+    "primerDiaSemana": "2017/04/17 MON"
+  }],
+  "intercambioDias": [{
+    "diaPorQueSeCambia": "MON",
+    "diaOriginal": "2016/10/13 THU"
+  }, {
+    "diaPorQueSeCambia": "TUE",
+    "diaOriginal": "2016/10/14 FRI"
+  }],
+  "diasSemanalesNoLectivos": ["SA", "SU"],
+  "cursoAcademico": "2016/2017",
+  "inicioCuatrimestreUno": "2016/09/05 MON",
+  "inicioCuatrimestreDos": "2017/01/23 MON",
+  "finCuatrimestreUno": "2016/12/23 FRI",
+  "finCuatrimestreDos": "2016/05/19 THU"
+}

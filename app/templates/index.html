@@ -1,38 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
-  <div id="lab">
-    <div id="beaker">
-      <div class="beer-foam">
-        <div class="foam-1"></div>
-        <div class="foam-2"></div>
-        <div class="foam-3"></div>
-        <div class="foam-4"></div>
-        <div class="foam-5"></div>
-        <div class="foam-6"></div>
-        <div class="foam-7"></div>
-      </div>
-      <div id="liquid">
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-      </div>
-    </div>
+{% load staticfiles %}
+<div class="enlaces">
+ <a href="/calendarioanual" class="ira">Crear calendario</a>
+  <a href="/horario" class="ira">Crear horario</a>
   </div>
+  <main>
+    <img src="{% static 'images/index.png' %}" alt="" height="379px" width="600px" class="index-img">
+  </main>
   <div>
     <h2 class="ws-title">#ABJ</h2>
     <h4 class="ws-title"> WebServices Test</h4>
   </div>
 
-  {% if user.is_authenticated %}
-  prueba
-  {% else %}
-  <a href="/calendarioanual">Crear calendario</a>
-  <a href="/horario">Crear horario</a>
-  <a href="/asignaturas">Ver lista de asignaturas</a>
-  {% endif %}
+  <div class="download-wrap">
+  <div class="download">
+    <a href="#" class="button-download">
+      Calendario 16/17
+      <span class="icon-wrap">
+        <i class="icon-download"></i>
+      </span>
+    </a>
+
+  </div>
+</div>
+
+
 
 {% endblock %}
