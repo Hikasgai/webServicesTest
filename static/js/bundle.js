@@ -25690,7 +25690,7 @@ var generarHorario = function() {
   var loadingDiv = $(".loading")[0];
   $("#btnAsignaturas").on("click", function() {
     $(loadingDiv).removeClass("hidden");
-    data = {};
+    var data = {};
     data["1"] = [];
     data["2"] = [];
     data["3"] = [];
@@ -26064,5 +26064,5 @@ cal.addIntDias();
 
 asig.escogerAsignatura();
 
-}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_79f36752.js","/")
+}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_31ac3678.js","/")
 },{"./asignaturas.js":7,"./calendario.js":8,"buffer":1,"jquery":6,"oMfpAn":4}]},{},[9])

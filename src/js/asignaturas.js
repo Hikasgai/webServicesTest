@@ -69,7 +69,7 @@ var generarHorario = function() {
   var loadingDiv = $(".loading")[0];
   $("#btnAsignaturas").on("click", function() {
     $(loadingDiv).removeClass("hidden");
-    data = {};
+    var data = {};
     data["1"] = [];
     data["2"] = [];
     data["3"] = [];

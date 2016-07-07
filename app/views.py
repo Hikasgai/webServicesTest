@@ -42,7 +42,7 @@ def horarioAsignaturas(request):
 @csrf_exempt
 def getAsignaturas(request):
 
-    server = SOAPProxy('www.abj-ws-devborja.c9users.io:8081')
+    server = SOAPProxy('www.abj-ws-devborja.c9users.io:8080')
     res = json.loads(server.obtenerAsignaturasGradoInformatica())
     data = {}
     data["1"] = []
@@ -69,7 +69,7 @@ def getAsignaturas(request):
 @csrf_exempt
 def obtenerGrupos(request):
     if request.method == "POST":
-        server = SOAPProxy('www.abj-ws-devborja.c9users.io:8081')
+        server = SOAPProxy('www.abj-ws-devborja.c9users.io:8080')
         server2 = SOAPProxy('www.abj-ws-devborja.c9users.io:8082')
         body_unicode = request.body.decode('utf-8')
         received_json_data = json.loads(body_unicode)
@@ -89,13 +89,14 @@ def obtenerGrupos(request):
 
 @csrf_exempt
 def obtenerTodasLasAsignaturas(request):
-    server = SOAPProxy('www.abj-ws-devborja.c9users.io:8081')
+    server = SOAPProxy('www.abj-ws-devborja.c9users.io:8080')
     res = json.loads(server.obtenerAsignaturasGradoInformatica())
     return HttpResponse(json.dumps(res, sort_keys=True, indent=4))
 
 def getGrados(request):
     if request.method == "GET":
         codigo = request.GET.get('cod')
+        curso = request.GET.get('curso')
         server = SOAPProxy('www.abj-ws-devborja.c9users.io:8080')
-        res = server.obtenerGruposAsignaturaInformatica(codigo)
+        res = server.obtenerGruposAsignaturaInformatica(codigo, curso)
         return HttpResponse(res)
