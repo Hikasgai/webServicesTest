@@ -79,6 +79,7 @@ def obtenerGrupos(request):
                 obj = {}
                 res = server.obtenerGruposAsignaturaInformatica(item, key)
                 res = json.loads(server.obtenerHorarioAsignatura(item, res["grupos"][0]))
+                #res = json.loads(server.obtenerHorarioAsignatura(item, "01"))
                 obj["nombreAsignatura"] = res["nombreAsignatura"]
                 obj["eventos"] = res["horarioGrupoAsignatura"][0]["eventos"]
                 data.append(obj)
@@ -93,6 +94,7 @@ def obtenerGrupos(request):
 def obtenerTodasLasAsignaturas(request):
     server = SOAPProxy('www.abj-ws-devborja.c9users.io:8080')
     res = json.loads(server.obtenerAsignaturasGradoInformatica())
+    print(res)
     return HttpResponse(json.dumps(res, sort_keys=True, indent=4))
 
 def getGrados(request):

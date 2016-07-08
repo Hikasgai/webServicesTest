@@ -12,19 +12,20 @@
   position: absolute; }
 
 #beaker {
-  border: 10px solid #FFF;
+  border: 10px solid #e4e4e4;
   border-top: 0;
   border-radius: 0 0 30px 30px;
-  height: 200px;
+  height: 222px;
   left: 14px;
   bottom: 0;
   width: 200px; }
 
 #beaker:before,
 #beaker:after {
-  border: 10px solid #FFF;
+  visibility: hidden;
+  border: 10px solid #d7d7d7;
   border-bottom: 0;
-  border-radius: 30px 30px 0 0;
+  border-radius: 40px 30px 0 0;
   content: '';
   height: 30px;
   position: absolute;
@@ -78,50 +79,50 @@
     bottom: 160px; } }
 
 .bubble:nth-child(1) {
-  left: 44px;
-  -webkit-animation-delay: 8.36721ms;
-  -webkit-animation-duration: 800ms;
-  -webkit-transform: scale(0.9); }
-
-.bubble:nth-child(2) {
-  left: 10px;
-  -webkit-animation-delay: 4.5332ms;
-  -webkit-animation-duration: 800ms;
+  left: 88px;
+  -webkit-animation-delay: 19.25938ms;
+  -webkit-animation-duration: 700ms;
   -webkit-transform: scale(0.7); }
 
-.bubble:nth-child(3) {
-  left: 77px;
-  -webkit-animation-delay: 13.09446ms;
-  -webkit-animation-duration: 700ms;
-  -webkit-transform: scale(1); }
+.bubble:nth-child(2) {
+  left: 40px;
+  -webkit-animation-delay: 12.75504ms;
+  -webkit-animation-duration: 800ms;
+  -webkit-transform: scale(1.3); }
 
-.bubble:nth-child(4) {
-  left: 58px;
-  -webkit-animation-delay: 4.16781ms;
-  -webkit-animation-duration: 600ms;
+.bubble:nth-child(3) {
+  left: 24px;
+  -webkit-animation-delay: 7.63335ms;
+  -webkit-animation-duration: 1300ms;
   -webkit-transform: scale(0.5); }
 
+.bubble:nth-child(4) {
+  left: 125px;
+  -webkit-animation-delay: 25.90142ms;
+  -webkit-animation-duration: 400ms;
+  -webkit-transform: scale(0.7); }
+
 .bubble:nth-child(5) {
-  left: 12px;
-  -webkit-animation-delay: 13.19742ms;
-  -webkit-animation-duration: 1200ms;
-  -webkit-transform: scale(1); }
+  left: 166px;
+  -webkit-animation-delay: 25.88207ms;
+  -webkit-animation-duration: 900ms;
+  -webkit-transform: scale(0.5); }
 
 .bubble:nth-child(6) {
-  left: 80px;
-  -webkit-animation-delay: 4.5453ms;
-  -webkit-animation-duration: 1000ms;
-  -webkit-transform: scale(1); }
+  left: 17px;
+  -webkit-animation-delay: 17.91065ms;
+  -webkit-animation-duration: 1200ms;
+  -webkit-transform: scale(0.9); }
 
 .bubble:nth-child(7) {
-  left: 125px;
-  -webkit-animation-delay: 20.62767ms;
-  -webkit-animation-duration: 1200ms;
-  -webkit-transform: scale(0.6); }
+  left: 58px;
+  -webkit-animation-delay: 2.19019ms;
+  -webkit-animation-duration: 1300ms;
+  -webkit-transform: scale(0.7); }
 
 .beer-foam {
   position: absolute;
-  bottom: 200px; }
+  bottom: 180px; }
 
 .foam-1, .foam-2, .foam-3, .foam-4,
 .foam-5, .foam-6, .foam-7 {
@@ -1396,7 +1397,7 @@ body {
   letter-spacing: -1px;
   opacity: 0.6;
   font-size: 2.4em;
-  color: #e7e7e7; }
+  color: #707070; }
 
 h2.ws-title {
   font-size: 4.8em;
